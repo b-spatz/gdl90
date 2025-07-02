@@ -3,7 +3,14 @@ Cobble together a very basic GDL90 (over WiFi) tester using selected AvareX code
 
 #### Usage Hints
 The "refresh" button at the bottom right flushes the console queue to control scrolling, etc.
-That console window is scrollable, but doen't (yet?) update until you click the refresh button.
+That console window is scrollable, but doen't (yet?) update until you click the refresh button (do it often).
+
+Example screenshot shows packet counts at the top, plus more detail packet info in the Console by port (4000 in this case):  
+* Heartbeat shows 36 packets of standard GDL90 Heartbeat and 33 of the stratux-identifying Heatbeat plus some bit decoding)  
+* Ownship shows 33 packets, decoded as N342ME/mode-S plus lat/long and some bit decoding
+* 90 Traffic packets, latest is SWA2276
+   
+<img width="600" src="gdl90-tester-0.0.8.png">
 
 #### Platform
 Use the heavy Flutter framework (as does AvareX), but wanted a stand-alone tool for Android (my use case). 
