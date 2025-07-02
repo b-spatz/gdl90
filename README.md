@@ -1,9 +1,10 @@
 # gdl90
 Cobble together a very basic GDL90 (over WiFi) tester using selected AvareX code (thanks ZK) as a base, with additional decoding and instrumentation.
+I use on Android as a simple stand-alone app to assert GDL90 compliance, help out Avare* forum users, diagnose my non-compliant new Dynon HDX &nbsp; :-( &nbsp; , etc.
 
 #### Usage Hints
 The "refresh" button at the bottom right flushes the console queue to control scrolling, etc.
-That console window is scrollable, but doen't (yet?) update until you click the refresh button (do it often).
+That console window is scrollable, but doesn't (yet?) update until you click the refresh button (do it often).
 
 Example screenshot shows packet counts at the top, plus more detail packet info in the Console by port (4000 in this case):  
 * Heartbeat shows 36 packets of standard GDL90 Heartbeat and 33 of the [stratux-identifying Heatbeat](https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md) plus some bit decoding)  
