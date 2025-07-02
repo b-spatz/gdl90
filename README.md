@@ -6,11 +6,12 @@ The "refresh" button at the bottom right flushes the console queue to control sc
 That console window is scrollable, but doen't (yet?) update until you click the refresh button (do it often).
 
 Example screenshot shows packet counts at the top, plus more detail packet info in the Console by port (4000 in this case):  
-* Heartbeat shows 36 packets of standard GDL90 Heartbeat and 33 of the stratux-identifying Heatbeat plus some bit decoding)  
+* Heartbeat shows 36 packets of standard GDL90 Heartbeat and 33 of the [stratux-identifying Heatbeat](https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md) plus some bit decoding)  
 * Ownship shows 33 packets, decoded as N342ME/mode-S plus lat/long and some bit decoding
-* 90 Traffic packets, latest is SWA2276
+* 90 Traffic packets, latest is SWA2276 with pressure altitude
+* Unknown packet counts by msg type and count, e.g. 33 packets of msg type 0x53
    
-<img width="600" src="gdl90-tester-0.0.8.png">
+<img width="600" src="gdl90-tester-0.0.8.jpg">
 
 #### Platform
 Use the heavy Flutter framework (as does AvareX), but wanted a stand-alone tool for Android (my use case). 
