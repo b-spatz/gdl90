@@ -34,6 +34,16 @@ message_factory.dart message types defined and processed (after reception, or ig
   0x4C ahrsReport               yes
   0x7A deviceReport             no
 ```
+#### stratux and GPS fix scenarios
+stratux encodes the GPS fix state but only in the stratux-specific HeartBeat (0xCC) in byte1 bit 1
+(along with AHRS enabled bit 0) -- but NOT in the GDL90 Heartbeat message status byte 1 bit
+[per the spec](https://www.faa.gov/sites/faa.gov/files/air_traffic/technology/adsb/archival/GDL90_Public_ICD_RevA.PDF)! (see p. 10).
+If stratux has no GPS fix, only the 0xCC msg will reflect this, along with no Ownship msg with position every second (1 Hz).
+
+The GDL90 spec allows a GPS fix of 0,0 to be sent (see section 3.4 p. 16) and this along with NIC=0 is supposed to signify an invalid fix, although at
+least AvareX ignores this scenario and assumes 0,0 is valid without checking NIC or HeartBeats(s), etc.  stratux is also non-compliant and does
+not use the 0x00 msg bit and just stops sending Ownship (spec says send ownship but 0,0 and NIC=0 means invalid).  Either I misunderstand the spec
+or many implementors are out of spec.
 
 #### Platform
 Use the heavy Flutter framework (as does AvareX), but wanted a stand-alone tool for Android (my use case). 
