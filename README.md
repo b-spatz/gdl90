@@ -14,6 +14,22 @@ Example screenshot shows packet counts at the top, plus more detail packet info 
    
 <img width="600" src="gdl90-tester-0.0.8.jpg">
 
+#### AvareX Decoding
+message_factory.dart message types defined and processed (after reception, or ignored):  
+`
+  Hex  Message                  Process?
+  0x00 heartBeat                no
+  0xCC stratux Heartbeat        no, but PR submitted for PFD roll-orientation reversal
+  0x07 uplink                   yes
+  0x0A ownShip                  yes
+  0x0B ownShipGeometricAltitude yes
+  0x14 trafficReport            yes
+  0x1E basicReport              no
+  0x1F longReport               no
+  0x4C ahrsReport               yes
+  0x7A deviceReport             no
+  `
+
 #### Platform
 Use the heavy Flutter framework (as does AvareX), but wanted a stand-alone tool for Android (my use case). 
 Perhaps this instrumentation will work back into AvareX at some point, if ZK allows it...
