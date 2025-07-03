@@ -1,17 +1,20 @@
 # gdl90
-Cobble together a very basic GDL90 (over WiFi) tester using selected AvareX code (thanks ZK) as a base, with additional decoding and instrumentation.
-I use on Android as a simple stand-alone app to assert GDL90 compliance, help out Avare* forum users, diagnose my non-compliant new Dynon HDX &nbsp; :-( &nbsp; , etc.
+A minimal GDL90 (over WiFi) tester using selected AvareX code (thanks ZK) as a base, with additional decoding and instrumentation.
+I use on Android (mostly) as a simple, portable, stand-alone app to assert GDL90 compliance,
+help out Avare* forum users, diagnose my non-compliant new Dynon HDX &nbsp; :-( &nbsp; , etc.
 
 #### Usage Hints
 The "refresh" button at the bottom right flushes the console queue to control scrolling, etc.
 That console window is scrollable, but doesn't (yet?) update until you click the refresh button (do it often).
 
-Example screenshot shows packet counts at the top, plus more detail packet info in the Console by port (4000 in this case):  
+Example screenshot against stratux v1.6r1-eu027 shows packet counts at the top, plus more detail packet info in the Console by port (4000 in this case):  
 * Heartbeat shows 36 packets of standard GDL90 Heartbeat and 33 of the [stratux-identifying Heatbeat](https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md) plus some bit decoding)  
 * Ownship shows 33 packets, decoded as N342ME/mode-S plus lat/long and some bit decoding
 * 90 Traffic packets, latest is SWA2276 with pressure altitude
-* "Unknown" packet counts by msg type and count, e.g. 33 packets of msg type 0x53
-   * "unknown" means msg types not decoding; 0x53 is "second stratux status" msg, 0x65 is stratux ForeFlight 
+* "Unknown" packet counts by msg type and count, e.g. 33 packets of msg type 0x53, but not decoding specifically, but may be "known" e.g.
+   * 0x53 is "second stratux status" msg (SX message, from Hilton software)
+   * 0x65 is stratux ForeFlight "ID Message" (see stratux GDL packet code, ForeFlight links below)
+* Counts by port: AvareX 4000, 43211, 49002, 5557 (as of 0.55) plus 8384 for proprietary Dynon msgs (in-progress alpha)
    
 <img width="600" src="gdl90-tester-0.0.8.jpg">
 
@@ -40,4 +43,4 @@ GDL90 spec: https://www.faa.gov/sites/faa.gov/files/air_traffic/technology/adsb/
 ForeFlight extensions: https://www.foreflight.com/connect/spec/  
 stratux identifying Heartbeat, etc.: https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md  
 stratux GDL90-ish packet code: https://github.com/cyoung/stratux/blob/master/main/gen_gdl90.go#L629  
-Dynon issues reported by Bradley: https://forum.flydynon.com/threads/ads-b-over-wifi.15650/page-2#post-92735  
+Dynon issues reported: https://forum.flydynon.com/threads/ads-b-over-wifi.15650/page-2#post-92735  
