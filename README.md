@@ -45,6 +45,11 @@ least AvareX ignores this scenario and assumes 0,0 is valid without checking NIC
 not use the 0x00 msg bit and just stops sending Ownship (spec says send ownship but 0,0 and NIC=0 means invalid).  Either I misunderstand the spec
 or many implementors are out of spec.
 
+#### Dynon HDX
+My new Dynon Skyview HDX is GDL90 non-compliant: the tester confirms reports that the HDX sends no Heartbeat or Ownship messages!
+These issues have been [reported by me and others](https://forum.flydynon.com/threads/ads-b-over-wifi.15650/page-2#post-92735)
+and I've discussed with Dynon over tickets and in-person, but no traction yet for Dynon to shore up basic GDL90 standard compliance.
+
 #### Platform
 Use the heavy Flutter framework (as does AvareX), but wanted a stand-alone tool for Android (my use case). 
 Perhaps this instrumentation will work back into AvareX at some point, if ZK allows it...
