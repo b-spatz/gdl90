@@ -10,13 +10,15 @@ Example screenshot shows packet counts at the top, plus more detail packet info 
 * Heartbeat shows 36 packets of standard GDL90 Heartbeat and 33 of the [stratux-identifying Heatbeat](https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md) plus some bit decoding)  
 * Ownship shows 33 packets, decoded as N342ME/mode-S plus lat/long and some bit decoding
 * 90 Traffic packets, latest is SWA2276 with pressure altitude
-* Unknown packet counts by msg type and count, e.g. 33 packets of msg type 0x53
+* "Unknown" packet counts by msg type and count, e.g. 33 packets of msg type 0x53
+   * "unknown" means msg types not decoding; 0x53 is "second stratux status" msg, 0x65 is stratux ForeFlight 
    
 <img width="600" src="gdl90-tester-0.0.8.jpg">
 
 #### AvareX Decoding
+storage.dart listens on ports 4000, 43211, 49002, 5557  
 message_factory.dart message types defined and processed (after reception, or ignored):  
-`
+```
   Hex  Message                  Process?
   0x00 heartBeat                no
   0xCC stratux Heartbeat        no, but PR submitted for PFD roll-orientation reversal
@@ -28,7 +30,7 @@ message_factory.dart message types defined and processed (after reception, or ig
   0x1F longReport               no
   0x4C ahrsReport               yes
   0x7A deviceReport             no
-  `
+```
 
 #### Platform
 Use the heavy Flutter framework (as does AvareX), but wanted a stand-alone tool for Android (my use case). 
@@ -37,5 +39,5 @@ Perhaps this instrumentation will work back into AvareX at some point, if ZK all
 GDL90 spec: https://www.faa.gov/sites/faa.gov/files/air_traffic/technology/adsb/archival/GDL90_Public_ICD_RevA.PDF  
 ForeFlight extensions: https://www.foreflight.com/connect/spec/  
 stratux identifying Heartbeat, etc.: https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md  
-stratux code: https://github.com/cyoung/stratux/blob/master/main/gen_gdl90.go#L629  
-Dynon issues: https://forum.flydynon.com/threads/ads-b-over-wifi.15650/page-2#post-92735  
+stratux GDL90-ish packet code: https://github.com/cyoung/stratux/blob/master/main/gen_gdl90.go#L629  
+Dynon issues reported by Bradley: https://forum.flydynon.com/threads/ads-b-over-wifi.15650/page-2#post-92735  
