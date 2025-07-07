@@ -41,7 +41,7 @@ and [processed](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a
 ```
 #### stratux and GPS fix scenarios
 stratux encodes the GPS fix state but only in the stratux-specific HeartBeat (0xCC) in byte1 bit 1
-(along with AHRS enabled bit 0) -- but NOT in the GDL90 Heartbeat message status byte 1 bit
+(along with AHRS enabled bit 0) -- but NOT in the GDL90 Heartbeat message status byte 1 bit 7
 [per the spec](https://www.faa.gov/sites/faa.gov/files/air_traffic/technology/adsb/archival/GDL90_Public_ICD_RevA.PDF)! (see p. 10).
 If stratux has no GPS fix, only the 0xCC msg will reflect this, along with no Ownship msg with position every second (1 Hz).
 
