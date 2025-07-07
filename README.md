@@ -3,6 +3,10 @@ A minimal GDL90 (over WiFi) tester using selected AvareX code (thanks ZK) as a b
 I use on Android (mostly) as a simple, portable, stand-alone app to assert GDL90 compliance,
 help out Avare* forum users, diagnose my non-compliant new Dynon HDX &nbsp; :-( &nbsp; , etc.
 
+#### Installing
+You will have to "side-load" the (latest) .apk from this page (0.0.8 is current).  If that's not something you understand or
+are comfortable with, then I can't help you.  [This information](https://www.apps4av.com/manual-installation.html) may help.
+
 #### Usage Hints
 The "refresh" button at the bottom right flushes the console queue to control scrolling, etc.
 That console window is scrollable, but doesn't (yet?) update until you click the refresh button (do it often).
