@@ -23,8 +23,9 @@ Example screenshot against stratux v1.6r1-eu027 shows packet counts at the top, 
 <img width="600" src="gdl90-tester-0.0.8.jpg">
 
 #### AvareX Decoding
-storage.dart listens on ports 4000, 43211, 49002, 5557  
-message_factory.dart message types defined and processed (after reception, or ignored):  
+[storage.dart](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/storage.dart#L186) listens on ports 4000, 43211, 49002, 5557  
+message_factory.dart [message types defined](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/gdl90/message_factory.dart#L98)
+and [processed](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/gdl90/message_factory.dart#L26) (after reception, or ignored):  
 ```
   Hex  Message                  Process?
   0x00 heartBeat                no
