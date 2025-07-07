@@ -5,8 +5,7 @@ help out Avare* forum users, diagnose my non-compliant new Dynon HDX &nbsp; :-( 
 
 #### Installing
 You will have to "side-load" the (latest) .apk from this page (0.0.8 is current).  If that's not something you understand or
-are comfortable with, then I can't help you.  <a target="_blank" href="https://www.apps4av.com/manual-installation.html">This information</a> may help.
-[This information](https://www.apps4av.com/manual-installation.html) may help.
+are comfortable with, then I can't help you.  [This information](https://www.apps4av.com/manual-installation.html) may help.
 
 #### Usage Hints
 The "refresh" button at the bottom right flushes the console queue to control scrolling, etc.
