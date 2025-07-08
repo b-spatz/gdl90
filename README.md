@@ -13,9 +13,9 @@ That console window is scrollable, but doesn't (yet?) update until you click the
 
 Example screenshot against stratux v1.6r1-eu027 shows packet counts at the top, plus more detail packet info in the Console by port (4000 in this case):  
 * Heartbeat shows 36 packets of standard GDL90 Heartbeat and 33 of the [stratux-identifying Heatbeat](https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md) plus some bit decoding)  
-* Ownship shows 33 packets, decoded as N342ME/mode-S plus lat/long and some bit decoding
+* Ownship shows 33 packets, decoded as N342ME/mode-S plus lat/long and integrity bit decoding
 * 90 Traffic packets, latest is SWA2276 with pressure altitude
-* "Unknown" shows 33 packets of msg type 0x53 which is a non-standard GDL90 message, such as:
+* "Unknown" shows 33 packets of msg type 0x53 which is a non-standard GDL90 message the tester is currently not decoding, such as:
    * 0x53 is "second stratux status" msg [(SX message](https://github.com/cyoung/stratux/blob/36b504555408fb90dd5cf1171d4f91f99571e50c/main/gen_gdl90.go#L466), from Hilton software)
    * 0x65 is stratux ForeFlight "ID Message" (see [stratux GDL packet code](https://github.com/cyoung/stratux/blob/36b504555408fb90dd5cf1171d4f91f99571e50c/main/gen_gdl90.go#L656), [ForeFlight links](https://www.foreflight.com/connect/spec/) below)
 * Counts by port: AvareX 4000, 43211, 49002, 5557 (as of 0.55) plus 8384 for proprietary Dynon msgs (in-progress alpha)
