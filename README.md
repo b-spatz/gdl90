@@ -60,8 +60,8 @@ Frankly, I'm surprised (and disappointed) that Dynon with their reputation isn't
 #### Platform
 I wanted a stand-alone tool for Android (my use case, and occasionally Windows), so I decided to use
 the multi-platform Flutter framework (despite the extra multi-platform overhead)
-since that's what AvareX usesand I was already developing some 
-code contributions for AvareX (Nexrad/layer opacity/sliders, TFRs fix after FAA change, bug fixes, etc.).
+since that's what AvareX uses and I was already developing some code contributions
+for AvareX (Nexrad/layer opacity/sliders, TFRs fix after FAA change, bug fixes, etc.).
 Perhaps this instrumentation/diagnostic code will work back into AvareX at some point, if ZK allows it...
 
 #### References
