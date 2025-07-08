@@ -15,7 +15,7 @@ Example screenshot against stratux v1.6r1-eu027 shows packet counts at the top, 
 * Heartbeat shows 36 packets of standard GDL90 Heartbeat and 33 of the [stratux-identifying Heatbeat](https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md) plus some bit decoding)  
 * Ownship shows 33 packets, decoded as N342ME/mode-S plus lat/long and some bit decoding
 * 90 Traffic packets, latest is SWA2276 with pressure altitude
-* "Unknown" packet counts by msg type and count, e.g. 33 packets of msg type 0x53, but not decoding specifically, but may be "known" e.g.
+* "Unknown" shows 33 packets of msg type 0x53 which is a non-standard GDL90 message, such as:
    * 0x53 is "second stratux status" msg (SX message, from Hilton software)
    * 0x65 is stratux ForeFlight "ID Message" (see stratux GDL packet code, ForeFlight links below)
 * Counts by port: AvareX 4000, 43211, 49002, 5557 (as of 0.55) plus 8384 for proprietary Dynon msgs (in-progress alpha)
