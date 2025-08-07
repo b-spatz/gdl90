@@ -57,6 +57,10 @@ These issues have been [reported by me and others](https://forum.flydynon.com/th
 and I've discussed with Dynon over tickets and in-person, but no traction yet for Dynon to shore up basic GDL90 standard compliance.
 Frankly, I'm surprised (and disappointed) that Dynon with their reputation isn't GDL90 standard compliant.
 
+The screenshot from 2025-07-17 shows this, including that HDX puts ownship in the Traffic report
+rather than filtering from Traffic and just issuing as proper Ownship.  I was on the way to OSH and no other traffic was nearby,
+so the lack of the traffic besides me is expected.
+
 <img width="600" src="gdl90-tester-0.0.8-Dynon-20250717.jpg">
 
 #### Platform
