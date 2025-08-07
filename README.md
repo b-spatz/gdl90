@@ -12,7 +12,7 @@ The "refresh" button at the bottom right flushes the console queue to control sc
 That console window is scrollable, but doesn't (yet?) update until you click the refresh button (do it often).
 
 The example screenshot below (against stratux v1.6r1-eu027) shows various GDL90 message counts at the top,
-plus more per-message detail in the Console by port (4000 in this case):  
+plus more per-message detail in the Console by port (4000 in this case).  Selected values explained: 
 * Heartbeat shows 36 messages of standard GDL90 Heartbeat and 33 of the [stratux-identifying Heatbeat](https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md) plus some bit decoding)  
 * Ownship shows 33 messages, decoded as N342ME/mode-S plus lat/long and integrity bit decoding
 * 90 Traffic messages, latest target is SWA2276 with pressure altitude
@@ -56,6 +56,8 @@ Using my tester I confirmed that my new Dynon Skyview HDX is not GDL90-compliant
 These issues have been [reported by me and others](https://forum.flydynon.com/threads/ads-b-over-wifi.15650/page-2#post-92735)
 and I've discussed with Dynon over tickets and in-person, but no traction yet for Dynon to shore up basic GDL90 standard compliance.
 Frankly, I'm surprised (and disappointed) that Dynon with their reputation isn't GDL90 standard compliant.
+
+<img width="600" src="gdl90-tester-0.0.8-Dynon-20250717.jpg">
 
 #### Platform
 I wanted a stand-alone tool for Android (my use case, and occasionally Windows), so I decided to use
