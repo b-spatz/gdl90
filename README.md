@@ -13,7 +13,7 @@ That console window is scrollable, but doesn't (yet?) update until you click the
 
 The example screenshot below (against stratux v1.6r1-eu027) shows various GDL90 message counts at the top,
 plus more per-message detail in the Console by port (4000 in this case).  Selected values explained: 
-* Heartbeat shows 36 messages of standard GDL90 Heartbeat and 33 of the [stratux-identifying Heatbeat](https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md) plus some bit decoding)  
+* Heartbeat shows 36 messages of standard GDL90 Heartbeat and 33 of the [stratux-identifying Heartbeat](https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md) plus some bit decoding)  
 * Ownship shows 33 messages, decoded as N342ME/mode-S plus lat/long and integrity bit decoding
 * 90 Traffic messages, latest target is SWA2276 with pressure altitude
 * Unknown shows 33 pmessages of type 0x53 which is a non-standard GDL90 message the tester is currently not decoding, such as:
@@ -79,4 +79,4 @@ Perhaps this instrumentation/diagnostic code will work back into AvareX at some 
 
 #### To-Do
 * Add timeout for Ownship if older than, say, 5 sec (should be 1/sec) + note any GPS fix bits when 0/false
-* Collect exemplary Dynon screenshot
+* Collect exemplary iLevil screenshot from Oshkosh 2025 (looks compliant, yay iLevil)
