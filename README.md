@@ -4,8 +4,11 @@ I use on Android (mostly) as a simple, portable, stand-alone app to assert GDL90
 help out Avare* forum users, diagnose my non-compliant new Dynon HDX &nbsp; :-( &nbsp; , etc.
 
 #### Installing
-You will have to "side-load" the (latest) .apk from this page (0.0.8 is current).  If that's not something you understand or
+You will have to "side-load" the (latest) .apk from this page (0.0.9 is current).  If that's not something you understand or
 are comfortable with, then I can't help you with additional support.  [This information](https://www.apps4av.com/manual-installation.html) from Avare* may help.
+
+>#### Choosing the right Android ABI File
+>To minimize file sizes, there are three separate versions of the `app-*.apk` files here.  Choose the version corresponding to your Android device's Application Binary Interface (ABI).  The primary ABIs are `arm64-v8a` (64-bit, most modern devices), `armeabi-v7a` (32-bit, common older devices), and `x86_64` (emulators and some Intel-based devices).
 
 #### Usage Hints
 The "refresh" button at the bottom right flushes the console queue to control scrolling, etc.
