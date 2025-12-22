@@ -75,7 +75,8 @@ Perhaps this instrumentation/diagnostic code will work back into AvareX at some 
 * ForeFlight extensions: https://www.foreflight.com/connect/spec/  
 * stratux identifying Heartbeat, etc.: https://github.com/cyoung/stratux/blob/master/notes/app-vendor-integration.md  
 * stratux GDL90-ish message code: https://github.com/cyoung/stratux/blob/master/main/gen_gdl90.go#L629  
-* Dynon issues reported: https://forum.flydynon.com/threads/ads-b-over-wifi.15650/page-2#post-92735  
+* Dynon issues reported: https://forum.flydynon.com/threads/ads-b-over-wifi.15650/page-2#post-92735
+* Andrew Sarangan's ADS-B Monitor (Android): https://github.com/asarangan/ADSB_Monitor2
 
 #### To-Do
 * Add timeout for Ownship if older than, say, 5 sec (should be 1/sec) + note any GPS fix bits when 0/false
