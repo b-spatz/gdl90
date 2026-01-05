@@ -4,7 +4,7 @@ I use on Android (mostly) as a simple, portable, stand-alone app to assert GDL90
 help out Avare* forum users, diagnose my non-compliant new Dynon HDX &nbsp; :-( &nbsp; , etc.
 
 #### Installing
-You will have to "side-load" the (latest) .apk from this page (0.0.9 is current).  If that's not something you understand or
+You will have to "side-load" the (latest) .apk from this page (0.0.10 is current).  If that's not something you understand or
 are comfortable with, then I can't help you with additional support.  [This information](https://www.apps4av.com/manual-installation.html) from Avare* may help.
 
 >#### Choosing the right Android ABI File
@@ -22,7 +22,7 @@ plus more per-message detail in the Console by port (4000 in this case).  Select
 * Unknown shows 33 messages of type 0x53 which is a non-standard GDL90 message the tester is currently not decoding, such as:
    * 0x53 is "second stratux status" msg [(SX message](https://github.com/cyoung/stratux/blob/36b504555408fb90dd5cf1171d4f91f99571e50c/main/gen_gdl90.go#L466), from Hilton software)
    * 0x65 is stratux ForeFlight "ID Message" (see [stratux GDL message code](https://github.com/cyoung/stratux/blob/36b504555408fb90dd5cf1171d4f91f99571e50c/main/gen_gdl90.go#L656), [ForeFlight links](https://www.foreflight.com/connect/spec/) below)
-* Counts by port: AvareX 4000, 43211, 49002, 5557 (as of 0.55) plus 8384 for proprietary Dynon msgs (in-progress alpha)
+* Counts by port: AvareX 4000, 43211, 49002, 5557 (as of 0.55) plus 8384 for proprietary Dynon msgs (in-progress beta adds counts by Dynon msg type and some detail if unfiltered)
    
 <img width="600" src="gdl90-tester-0.0.8.jpg">
 
