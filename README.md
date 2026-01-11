@@ -38,10 +38,10 @@ and [processed](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a
   0x0A ownShip                  yes
   0x0B ownShipGeometricAltitude yes
   0x14 trafficReport            yes
-  0x1E basicReport              no
-  0x1F longReport               no
+  0x1E basicReport              no   [but reported by this tester]
+  0x1F longReport               no   [but reported by this tester]
   0x4C ahrsReport               yes
-  0x7A deviceReport             no
+  0x7A deviceReport             no   [but reported by this tester]
 ```
 #### stratux and GPS fix scenarios
 stratux encodes the GPS fix state but only in the stratux-specific HeartBeat (0xCC) message in byte1 bit 1
@@ -65,6 +65,16 @@ rather than filtering from Traffic and just issuing as proper Ownship.  I was on
 so the lack of the traffic besides me is expected.
 
 <img width="600" src="gdl90-tester-0.0.8-Dynon-20250717.jpg">
+
+> [!WARNING]
+> As of 0.0.10 there is Dynon proprietary protocol (port 8384) detection and counting of all message types.
+> If the "filter" icon (bottom right, next to refresh is removed (default: enabled, detail suppressed),
+> message detail (decoded) is provided -- but WARNING -- there can be a LOT due to ADAHRS and other high-frequency
+> messages, so be careful with removing the default filtering.  I am continue to fiddle with these messages behind the scenes.
+
+#### Sample Console Output
+You can cut&paste console outout for exporting data from the tester.  No, no output saved to a file (yet, maybe ever).  
+Here is a [sample](console.txt).
 
 #### Platform
 I wanted a stand-alone tool for Android (my use case, and occasionally Windows), so I decided to use
