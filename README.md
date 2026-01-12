@@ -68,9 +68,9 @@ so the lack of the traffic besides me is expected.
 
 > [!WARNING]
 > As of 0.0.10 there is Dynon proprietary protocol (port 8384) detection and counting of all message types.
-> If the "filter" icon (bottom right, next to refresh is removed (default: enabled, detail suppressed),
-> message detail (decoded) is provided -- but WARNING -- there can be a LOT due to ADAHRS and other high-frequency
-> messages, so be careful with removing the default filtering.  I am continue to fiddle with these messages behind the scenes.
+> If the "filter" icon (bottom right, next to refres, not depicted in above screenshot) is removed (default: enabled, detail suppressed),
+> then decoded message detail is provided in the console.  WARNING -- there can be a LOT due to ADAHRS and other high-frequency
+> messages, so be careful with removing the default filtering.  Future use (e.g. flight plan push/pull, GDL90 AHRS support) is possible.
 
 #### Sample Console Output
 You can cut&paste console outout for exporting data from the tester.  No, no output saved to a file (yet, maybe ever).  
