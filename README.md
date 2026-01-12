@@ -68,7 +68,7 @@ so the lack of the traffic besides me is expected.
 
 > [!WARNING]
 > As of 0.0.10 there is Dynon proprietary protocol (port 8384) detection and counting of all message types.
-> If the "filter" icon (bottom right, next to refres, not depicted in above screenshot) is removed (default: enabled, detail suppressed),
+> If the "filter" icon (bottom right, next to refresh, not depicted in above screenshot) is removed (default: enabled, detail suppressed),
 > then decoded message detail is provided in the console.  WARNING -- there can be a LOT due to ADAHRS and other high-frequency
 > messages, so be careful with removing the default filtering.  Future use (e.g. flight plan push/pull, GDL90 AHRS support) is possible.
 
