@@ -1,6 +1,6 @@
 # gdl90
 A minimal GDL90 (over WiFi) tester using selected AvareX code (thanks ZK) as a base, with additional decoding and instrumentation.
-I use on Android (mostly) as a simple, portable, stand-alone app to assert GDL90 compliance,
+I use on Android (mostly) as a simple, portable, stand-alone app to assert GDL90 over WiFi reception, message types, 
 help out Avare* forum users, diagnose my non-compliant new Dynon HDX &nbsp; :-( &nbsp; , etc.
 
 #### Installing
@@ -26,10 +26,11 @@ plus more per-message detail in the Console by port (4000 in this case).  Select
    
 <img width="600" src="gdl90-tester-0.0.8.jpg">
 
-#### AvareX Decoding
-[storage.dart](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/storage.dart#L186) listens on ports 4000, 43211, 49002, 5557  
-message_factory.dart [message types defined](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/gdl90/message_factory.dart#L98)
-and [processed](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/gdl90/message_factory.dart#L26) (after reception, or ignored):  
+#### GDL90 Decoding
+Reflecting the base AvareX code, [storage.dart](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/storage.dart#L186)
+listens on ports 4000, 43211, 49002, 5557.  
+AvareX message_factory.dart [defines the known message types](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/gdl90/message_factory.dart#L98)
+and [processing](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/gdl90/message_factory.dart#L26), but the tester will decode the stratux Heartbeat and report any message type, including "known" types.  AvareX summary:
 ```
   Hex  Message                  Process?
   0x00 heartBeat                no
@@ -55,26 +56,30 @@ not use the 0x00 msg bit and just stops sending Ownship (spec says send ownship 
 or many hardware/software implementors are out of spec.
 
 #### Dynon HDX
-Using my tester I confirmed that my new Dynon Skyview HDX is not GDL90-compliant: the tester confirms the HDX sends no Heartbeat or Ownship messages!
+Using my tester I confirmed that my new (March 2025) Dynon Skyview HDX is not GDL90-compliant: the HDX sends no Heartbeat or Ownship messages!
 These issues have been [reported by me and others](https://forum.flydynon.com/threads/ads-b-over-wifi.15650/page-2#post-92735)
 and I've discussed with Dynon over tickets and in-person, but no traction yet for Dynon to shore up basic GDL90 standard compliance.
 Frankly, I'm surprised (and disappointed) that Dynon with their reputation isn't GDL90 standard compliant.
 
-The screenshot from 2025-07-17 shows this, including that HDX puts ownship in the Traffic report
-rather than filtering from Traffic and just issuing as proper Ownship.  I was on the way to OSH and no other traffic was nearby,
-so the lack of the traffic besides me is expected.
+The screenshot below from 2026-01-30 shows this, including that HDX includes my ship (N342ME) in the Traffic report
+rather than filtering from received (TIS-B?) and just emitting as a proper Ownship for N342ME.  The HDX should know my tail number
+as integrated avionics, whereas the stratux requiries configuring your tail/ICAO, or ideally, at the EFB client
+(consider a CFI moving their stratux between aircraft: better to configure from a menu/list at the EFB, but _some people_ argue this point).
 
-<img width="600" src="gdl90-tester-0.0.8-Dynon-20250717.jpg">
+<img width="600" src="screenshot-0.0.10-Dynon-20260130.png">
 
+#### Dynon Proprietary Protocol Decoding
 > [!WARNING]
 > As of 0.0.10 there is Dynon proprietary protocol (port 8384) detection and counting of all message types.
-> If the "filter" icon (bottom right, next to refresh, not depicted in above screenshot) is removed (default: enabled, detail suppressed),
+> If the "filter" icon (bottom right, next to refresh) is removed (default: enabled, detail suppressed),
 > then decoded message detail is provided in the console.  WARNING -- there can be a LOT due to ADAHRS and other high-frequency
 > messages, so be careful with removing the default filtering.  Future use (e.g. flight plan push/pull, GDL90 AHRS support) is possible.
 
+<img width="600" src="screenshot2-0.0.10-Dynon-20260130.png">
+
 #### Sample Console Output
 You can cut&paste console outout for exporting data from the tester.  No, no output saved to a file (yet, maybe ever).  
-Here is a [sample](console.txt).
+Here is a [sample](console.txt) which includes Dynon protocol detail.
 
 #### Platform
 I wanted a stand-alone tool for Android (my use case, and occasionally Windows), so I decided to use
@@ -92,5 +97,6 @@ Perhaps this instrumentation/diagnostic code will work back into AvareX at some 
 * Andrew Sarangan's ADS-B Monitor (Android): https://github.com/asarangan/ADSB_Monitor2
 
 #### To-Do
-* Add timeout for Ownship if older than, say, 5 sec (should be 1/sec) + note any GPS fix bits when 0/false
+* Done: Add timeout for Ownship if older than, say, 5 sec (should be 1/sec)
+* Note any GPS fix bits when 0/false (or NIC/NACp are noteworthy)
 * Collect exemplary iLevil screenshot from Oshkosh 2025 (looks compliant, yay iLevil)
