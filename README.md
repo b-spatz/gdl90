@@ -27,10 +27,10 @@ plus more per-message detail in the Console by port (4000 in this case).  Select
 <img width="600" src="gdl90-tester-0.0.8.jpg">
 
 #### GDL90 Decoding
-Reflecting the base AvareX code, [storage.dart](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/storage.dart#L186)
-listens on ports 4000, 43211, 49002, 5557.  
+Reflecting the base AvareX code we listen on ports 4000, 43211, 49002, 5557
+([storage.dart](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/storage.dart#L186)).  
 AvareX message_factory.dart [defines the known message types](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/gdl90/message_factory.dart#L98)
-and [processing](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/gdl90/message_factory.dart#L26), but the tester will decode the stratux Heartbeat and report any message type, including "known" types.  AvareX summary:
+and [processing](https://github.com/apps4av/avarex/blob/9536d1bf661e9e314d6a7e91a864fcf4be8755da/lib/gdl90/message_factory.dart#L26), but the tester will decode the stratux Heartbeat and report any message type, including "unknown" types.  AvareX summary:
 ```
   Hex  Message                  Process?
   0x00 heartBeat                no
